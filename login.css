@@ -1,0 +1,411 @@
+/* =====================================================
+   A1 CAR DETAILING FACTORY
+   LOGIN PAGE
+   ===================================================== */
+
+
+/* =====================================================
+   RESET
+   ===================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* =====================================================
+   BODY
+   ===================================================== */
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+
+    min-height: 100vh;
+
+    background:
+        radial-gradient(
+            circle at top left,
+            #1e3a8a 0%,
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at bottom right,
+            #312e81 0%,
+            transparent 35%
+        ),
+        #020617;
+
+    color: #ffffff;
+}
+
+
+/* =====================================================
+   LOGIN PAGE
+   ===================================================== */
+
+.login-page {
+    min-height: 100vh;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 20px;
+}
+
+
+/* =====================================================
+   LOGIN CARD
+   ===================================================== */
+
+.login-card {
+    width: 100%;
+
+    max-width: 430px;
+
+    background: rgba(15, 23, 42, 0.96);
+
+    border: 1px solid rgba(148, 163, 184, 0.2);
+
+    border-radius: 20px;
+
+    padding: 38px;
+
+    box-shadow:
+        0 25px 60px rgba(0, 0, 0, 0.45);
+
+    backdrop-filter: blur(12px);
+}
+
+
+/* =====================================================
+   BRAND
+   ===================================================== */
+
+.brand {
+    text-align: center;
+
+    margin-bottom: 32px;
+}
+
+
+.brand-icon {
+    width: 70px;
+    height: 70px;
+
+    margin: 0 auto 16px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #2563eb,
+            #7c3aed
+        );
+
+    font-size: 24px;
+
+    font-weight: 800;
+
+    box-shadow:
+        0 10px 30px rgba(37, 99, 235, 0.35);
+}
+
+
+.brand h1 {
+    font-size: 24px;
+
+    margin-bottom: 8px;
+
+    color: #ffffff;
+}
+
+
+.brand p {
+    color: #94a3b8;
+
+    font-size: 14px;
+}
+
+
+/* =====================================================
+   FORM
+   ===================================================== */
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+
+.form-group label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    color: #e2e8f0;
+}
+
+
+.form-group input {
+    width: 100%;
+
+    height: 50px;
+
+    padding: 0 14px;
+
+    border-radius: 10px;
+
+    border: 1px solid #334155;
+
+    background: #0f172a;
+
+    color: #ffffff;
+
+    font-size: 15px;
+
+    outline: none;
+
+    transition: 0.2s;
+}
+
+
+.form-group input::placeholder {
+    color: #64748b;
+}
+
+
+.form-group input:focus {
+    border-color: #3b82f6;
+
+    box-shadow:
+        0 0 0 3px rgba(59, 130, 246, 0.12);
+}
+
+
+/* =====================================================
+   PASSWORD
+   ===================================================== */
+
+.password-box {
+    position: relative;
+}
+
+
+.password-box input {
+    padding-right: 70px;
+}
+
+
+.show-password {
+    position: absolute;
+
+    right: 10px;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    border: none;
+
+    background: transparent;
+
+    color: #60a5fa;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    padding: 5px;
+}
+
+
+.show-password:hover {
+    color: #93c5fd;
+}
+
+
+/* =====================================================
+   REMEMBER ME
+   ===================================================== */
+
+.login-options {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 22px;
+}
+
+
+.remember {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    color: #cbd5e1;
+
+    font-size: 14px;
+
+    cursor: pointer;
+}
+
+
+.remember input {
+    width: 16px;
+
+    height: 16px;
+
+    cursor: pointer;
+
+    accent-color: #2563eb;
+}
+
+
+/* =====================================================
+   LOGIN BUTTON
+   ===================================================== */
+
+.login-button {
+    width: 100%;
+
+    height: 52px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #2563eb,
+            #7c3aed
+        );
+
+    color: #ffffff;
+
+    font-size: 16px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+
+.login-button:hover {
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 10px 25px rgba(37, 99, 235, 0.3);
+}
+
+
+.login-button:active {
+    transform: translateY(0);
+}
+
+
+.login-button:disabled {
+    opacity: 0.7;
+
+    cursor: not-allowed;
+
+    transform: none;
+}
+
+
+/* =====================================================
+   LOGIN MESSAGE
+   ===================================================== */
+
+.login-message {
+    min-height: 22px;
+
+    margin-top: 15px;
+
+    text-align: center;
+
+    font-size: 14px;
+}
+
+
+.login-message.error {
+    color: #f87171;
+}
+
+
+.login-message.success {
+    color: #4ade80;
+}
+
+
+/* =====================================================
+   FOOTER
+   ===================================================== */
+
+.footer {
+    margin-top: 30px;
+
+    padding-top: 20px;
+
+    border-top: 1px solid #1e293b;
+
+    text-align: center;
+
+    color: #64748b;
+
+    font-size: 12px;
+
+    line-height: 1.7;
+}
+
+
+/* =====================================================
+   MOBILE
+   ===================================================== */
+
+@media (max-width: 500px) {
+
+    .login-card {
+        padding: 28px 22px;
+
+        border-radius: 16px;
+    }
+
+
+    .brand h1 {
+        font-size: 21px;
+    }
+
+
+    .brand-icon {
+        width: 62px;
+
+        height: 62px;
+
+        font-size: 21px;
+    }
+
+}

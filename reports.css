@@ -1,0 +1,632 @@
+/* =====================================================
+   A1 CAR DETAILING FACTORY
+   REPORTS PAGE
+===================================================== */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #0f172a;
+    color: #f8fafc;
+    min-height: 100vh;
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.top-header {
+    background: #020617;
+    border-bottom: 1px solid #334155;
+
+    padding: 18px 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    position: sticky;
+    top: 0;
+
+    z-index: 100;
+}
+
+.top-header h1 {
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+.top-header p {
+    color: #94a3b8;
+    font-size: 14px;
+}
+
+.header-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.header-actions button {
+    border: none;
+    padding: 10px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.dashboard-btn {
+    background: #334155;
+    color: white;
+}
+
+.dashboard-btn:hover {
+    background: #475569;
+}
+
+.logout-btn {
+    background: #dc2626;
+    color: white;
+}
+
+.logout-btn:hover {
+    background: #b91c1c;
+}
+
+
+/* =====================================================
+   CONTAINER
+===================================================== */
+
+.container {
+    max-width: 1600px;
+    margin: auto;
+    padding: 25px;
+}
+
+
+/* =====================================================
+   REPORT CONTROLS
+===================================================== */
+
+.report-controls {
+    background: #1e293b;
+
+    border: 1px solid #334155;
+    border-radius: 12px;
+
+    padding: 20px;
+
+    display: flex;
+    align-items: end;
+    gap: 15px;
+
+    flex-wrap: wrap;
+
+    margin-bottom: 20px;
+}
+
+.control-group {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.control-group label {
+    color: #cbd5e1;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.control-group select,
+.control-group input {
+    background: #0f172a;
+    color: white;
+
+    border: 1px solid #475569;
+
+    border-radius: 7px;
+
+    padding: 11px 12px;
+
+    min-width: 170px;
+
+    outline: none;
+}
+
+.control-group select:focus,
+.control-group input:focus {
+    border-color: #60a5fa;
+}
+
+.control-buttons {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.control-buttons button {
+    border: none;
+
+    padding: 11px 15px;
+
+    border-radius: 7px;
+
+    cursor: pointer;
+
+    color: white;
+
+    font-weight: bold;
+}
+
+.generate-btn {
+    background: #2563eb;
+}
+
+.generate-btn:hover {
+    background: #1d4ed8;
+}
+
+.print-btn {
+    background: #475569;
+}
+
+.print-btn:hover {
+    background: #64748b;
+}
+
+.export-btn {
+    background: #15803d;
+}
+
+.export-btn:hover {
+    background: #166534;
+}
+
+.hidden {
+    display: none !important;
+}
+
+
+/* =====================================================
+   REPORT HEADING
+===================================================== */
+
+.report-heading {
+    background: #1e293b;
+
+    border: 1px solid #334155;
+    border-radius: 12px;
+
+    padding: 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 20px;
+}
+
+.report-heading h2 {
+    font-size: 22px;
+    margin-bottom: 6px;
+}
+
+.report-heading p {
+    color: #94a3b8;
+}
+
+.generated-time {
+    color: #94a3b8;
+    font-size: 13px;
+}
+
+
+/* =====================================================
+   STAT CARDS
+===================================================== */
+
+.stats-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(6, minmax(150px, 1fr));
+
+    gap: 15px;
+
+    margin-bottom: 25px;
+}
+
+.stat-card {
+    background: #1e293b;
+
+    border: 1px solid #334155;
+
+    border-radius: 12px;
+
+    padding: 18px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+}
+
+.stat-icon {
+    width: 45px;
+    height: 45px;
+
+    border-radius: 10px;
+
+    background: #334155;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 20px;
+}
+
+.stat-card span {
+    display: block;
+
+    color: #94a3b8;
+
+    font-size: 12px;
+
+    margin-bottom: 6px;
+}
+
+.stat-card strong {
+    font-size: 20px;
+}
+
+
+/* =====================================================
+   PAYMENT SECTION
+===================================================== */
+
+.payment-section {
+    margin-bottom: 25px;
+}
+
+.payment-section h2 {
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+
+.payment-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 15px;
+}
+
+.payment-card {
+    background: #1e293b;
+
+    border: 1px solid #334155;
+
+    border-radius: 12px;
+
+    padding: 20px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 15px;
+}
+
+.payment-icon {
+    width: 48px;
+    height: 48px;
+
+    border-radius: 10px;
+
+    background: #334155;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 22px;
+}
+
+.payment-card span {
+    display: block;
+
+    font-size: 12px;
+
+    color: #94a3b8;
+
+    margin-bottom: 6px;
+}
+
+.payment-card strong {
+    font-size: 22px;
+}
+
+.payment-card.cash {
+    border-left: 4px solid #16a34a;
+}
+
+.payment-card.phonepe {
+    border-left: 4px solid #7c3aed;
+}
+
+.payment-card.total {
+    border-left: 4px solid #2563eb;
+}
+
+
+/* =====================================================
+   TABLE SECTION
+===================================================== */
+
+.table-section {
+    background: #1e293b;
+
+    border: 1px solid #334155;
+
+    border-radius: 12px;
+
+    margin-bottom: 25px;
+
+    overflow: hidden;
+}
+
+.section-header {
+    padding: 20px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    border-bottom: 1px solid #334155;
+}
+
+.section-header h2 {
+    font-size: 19px;
+
+    margin-bottom: 5px;
+}
+
+.section-header p {
+    color: #94a3b8;
+
+    font-size: 13px;
+}
+
+.section-header span {
+    background: #334155;
+
+    padding: 7px 12px;
+
+    border-radius: 20px;
+
+    font-size: 12px;
+
+    color: #cbd5e1;
+}
+
+
+/* =====================================================
+   TABLE
+===================================================== */
+
+.table-wrapper {
+    width: 100%;
+
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+
+    border-collapse: collapse;
+
+    min-width: 900px;
+}
+
+th {
+    background: #020617;
+
+    color: #cbd5e1;
+
+    padding: 13px 10px;
+
+    text-align: left;
+
+    font-size: 12px;
+
+    white-space: nowrap;
+}
+
+td {
+    padding: 12px 10px;
+
+    border-bottom: 1px solid #334155;
+
+    color: #e2e8f0;
+
+    font-size: 13px;
+
+    white-space: nowrap;
+}
+
+tbody tr:hover {
+    background: #273449;
+}
+
+.empty {
+    text-align: center;
+
+    padding: 35px;
+
+    color: #94a3b8;
+}
+
+
+/* =====================================================
+   STATUS
+===================================================== */
+
+.status {
+    display: inline-block;
+
+    padding: 5px 9px;
+
+    border-radius: 20px;
+
+    font-size: 11px;
+
+    font-weight: bold;
+}
+
+.status.completed {
+    background: #14532d;
+
+    color: #bbf7d0;
+}
+
+.status.inside {
+    background: #1e3a8a;
+
+    color: #bfdbfe;
+}
+
+
+/* =====================================================
+   MONEY
+===================================================== */
+
+.money {
+    font-weight: bold;
+}
+
+.balance {
+    color: #fbbf24;
+    font-weight: bold;
+}
+
+.received {
+    color: #4ade80;
+    font-weight: bold;
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer {
+    text-align: center;
+
+    padding: 25px 10px;
+
+    color: #64748b;
+
+    font-size: 13px;
+}
+
+footer p {
+    margin: 4px;
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 1200px) {
+
+    .stats-grid {
+        grid-template-columns:
+            repeat(3, 1fr);
+    }
+
+}
+
+@media (max-width: 800px) {
+
+    .top-header {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 15px;
+    }
+
+    .header-actions {
+        width: 100%;
+    }
+
+    .header-actions button {
+        flex: 1;
+    }
+
+    .report-controls {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .control-group select,
+    .control-group input {
+        width: 100%;
+    }
+
+    .control-buttons {
+        width: 100%;
+    }
+
+    .control-buttons button {
+        flex: 1;
+    }
+
+    .stats-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .payment-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .report-heading {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 12px;
+    }
+
+}
+
+@media (max-width: 500px) {
+
+    .container {
+        padding: 12px;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .top-header {
+        padding: 15px;
+    }
+
+    .top-header h1 {
+        font-size: 20px;
+    }
+
+}

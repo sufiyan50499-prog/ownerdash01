@@ -1,0 +1,752 @@
+/* =========================================================
+A1 CAR DETAILING FACTORY
+OWNER DASHBOARD
+========================================================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  }
+
+body {
+font-family: Arial, Helvetica, sans-serif;
+background: #0f172a;
+color: #e5e7eb;
+}
+
+/* =========================================================
+SIDEBAR
+========================================================= */
+
+.sidebar {
+position: fixed;
+left: 0;
+top: 0;
+
+
+width: 250px;
+height: 100vh;
+
+background: #020617;
+
+border-right: 1px solid #1e293b;
+
+padding: 25px 15px;
+
+display: flex;
+flex-direction: column;
+
+z-index: 100;
+
+
+}
+
+.brand {
+text-align: center;
+
+
+padding-bottom: 25px;
+
+border-bottom: 1px solid #1e293b;
+
+margin-bottom: 20px;
+
+
+}
+
+.brand h2 {
+color: white;
+font-size: 24px;
+}
+
+.brand p {
+color: #94a3b8;
+
+
+font-size: 12px;
+
+margin-top: 4px;
+
+
+}
+
+.brand span {
+display: inline-block;
+
+
+margin-top: 10px;
+
+background: #1e293b;
+
+color: #60a5fa;
+
+padding: 5px 10px;
+
+border-radius: 20px;
+
+font-size: 11px;
+
+
+}
+
+/* =========================================================
+NAVIGATION
+========================================================= */
+
+nav {
+display: flex;
+
+
+flex-direction: column;
+
+gap: 7px;
+
+
+}
+
+nav a {
+color: #cbd5e1;
+
+
+text-decoration: none;
+
+padding: 13px 15px;
+
+border-radius: 8px;
+
+font-size: 14px;
+
+transition: 0.2s;
+
+
+}
+
+nav a:hover,
+nav a.active {
+background: #1e293b;
+
+
+color: white;
+
+
+}
+
+/* =========================================================
+LOGOUT
+========================================================= */
+
+.logout-btn {
+margin-top: auto;
+
+
+width: 100%;
+
+border: none;
+
+background: #7f1d1d;
+
+color: white;
+
+padding: 13px;
+
+border-radius: 8px;
+
+cursor: pointer;
+
+font-size: 14px;
+
+
+}
+
+.logout-btn:hover {
+background: #991b1b;
+}
+
+/* =========================================================
+MAIN
+========================================================= */
+
+.main {
+margin-left: 250px;
+
+
+min-height: 100vh;
+
+padding: 25px;
+
+
+}
+
+/* =========================================================
+TOP BAR
+========================================================= */
+
+.topbar {
+display: flex;
+
+
+justify-content: space-between;
+
+align-items: center;
+
+margin-bottom: 25px;
+
+
+}
+
+.topbar h1 {
+font-size: 28px;
+
+
+color: white;
+
+
+}
+
+.topbar p {
+color: #94a3b8;
+
+
+margin-top: 5px;
+
+
+}
+
+.owner-badge {
+background: #1e293b;
+
+
+border: 1px solid #334155;
+
+padding: 10px 15px;
+
+border-radius: 8px;
+
+
+}
+
+/* =========================================================
+STATISTICS
+========================================================= */
+
+.stats {
+display: grid;
+
+
+grid-template-columns: repeat(4, 1fr);
+
+gap: 18px;
+
+margin-bottom: 25px;
+
+
+}
+
+.stat-card {
+background: #1e293b;
+
+
+border: 1px solid #334155;
+
+border-radius: 12px;
+
+padding: 20px;
+
+display: flex;
+
+align-items: center;
+
+gap: 15px;
+
+transition: 0.2s;
+
+
+}
+
+.stat-card.clickable-card {
+cursor: pointer;
+}
+
+.stat-card.clickable-card:hover {
+transform: translateY(-2px);
+
+
+border-color: #60a5fa;
+
+background: #243247;
+
+
+}
+
+.stat-card.clickable-card:focus {
+outline: 2px solid #60a5fa;
+
+
+outline-offset: 2px;
+
+
+}
+
+.stat-icon {
+width: 50px;
+
+
+height: 50px;
+
+min-width: 50px;
+
+border-radius: 10px;
+
+background: #334155;
+
+display: flex;
+
+justify-content: center;
+
+align-items: center;
+
+font-size: 23px;
+
+
+}
+
+.stat-card span {
+display: block;
+
+
+color: #94a3b8;
+
+font-size: 13px;
+
+margin-bottom: 6px;
+
+
+}
+
+.stat-card strong {
+color: white;
+
+
+font-size: 24px;
+
+
+}
+
+/* =========================================================
+PANEL
+========================================================= */
+
+.panel {
+background: #1e293b;
+
+
+border: 1px solid #334155;
+
+border-radius: 12px;
+
+margin-bottom: 25px;
+
+overflow: hidden;
+
+
+}
+
+.panel-header {
+padding: 20px;
+
+
+display: flex;
+
+justify-content: space-between;
+
+align-items: center;
+
+gap: 15px;
+
+border-bottom: 1px solid #334155;
+
+
+}
+
+.panel-header h2 {
+color: white;
+
+
+font-size: 19px;
+
+
+}
+
+.panel-header p {
+color: #94a3b8;
+
+
+font-size: 13px;
+
+margin-top: 5px;
+
+
+}
+
+/* =========================================================
+HEADER BUTTONS
+========================================================= */
+
+.header-actions {
+display: flex;
+
+
+gap: 10px;
+
+align-items: center;
+
+
+}
+
+.primary-btn,
+.secondary-btn {
+display: inline-block;
+
+
+text-decoration: none;
+
+padding: 11px 18px;
+
+border-radius: 7px;
+
+font-size: 13px;
+
+font-weight: bold;
+
+cursor: pointer;
+
+transition: 0.2s;
+
+
+}
+
+.primary-btn {
+background: #2563eb;
+
+
+color: white;
+
+
+}
+
+.primary-btn:hover {
+background: #1d4ed8;
+}
+
+.secondary-btn {
+background: #334155;
+
+
+color: #e2e8f0;
+
+border: 1px solid #475569;
+
+
+}
+
+.secondary-btn:hover {
+background: #475569;
+
+
+color: white;
+
+
+}
+
+/* =========================================================
+TABLE
+========================================================= */
+
+.table-wrapper {
+width: 100%;
+
+
+overflow-x: auto;
+
+
+}
+
+table {
+width: 100%;
+
+
+border-collapse: collapse;
+
+min-width: 1100px;
+
+
+}
+
+th {
+text-align: left;
+
+
+color: #94a3b8;
+
+font-size: 12px;
+
+padding: 14px;
+
+background: #172033;
+
+white-space: nowrap;
+
+
+}
+
+td {
+padding: 14px;
+
+
+border-top: 1px solid #334155;
+
+color: #cbd5e1;
+
+font-size: 13px;
+
+white-space: nowrap;
+
+
+}
+
+tbody tr:hover td {
+background: #263449;
+}
+
+/* =========================================================
+STATUS
+========================================================= */
+
+.status-inside {
+display: inline-block;
+
+
+background: #14532d;
+
+color: #bbf7d0;
+
+padding: 5px 9px;
+
+border-radius: 20px;
+
+font-size: 11px;
+
+
+}
+
+.status-completed {
+display: inline-block;
+
+
+background: #1e3a8a;
+
+color: #bfdbfe;
+
+padding: 5px 9px;
+
+border-radius: 20px;
+
+font-size: 11px;
+
+
+}
+
+/* =========================================================
+MONEY
+========================================================= */
+
+.balance {
+color: #fbbf24;
+
+
+font-weight: bold;
+
+
+}
+
+.paid {
+color: #4ade80;
+
+font-weight: bold;
+
+
+}
+
+.amount {
+color: #e5e7eb;
+
+
+font-weight: 600;
+
+
+}
+
+/* =========================================================
+LOADING / EMPTY
+========================================================= */
+
+.loading {
+text-align: center;
+
+
+color: #94a3b8;
+
+padding: 30px;
+
+
+}
+
+.empty-message {
+text-align: center;
+
+
+color: #94a3b8;
+
+padding: 30px;
+
+
+}
+
+/* =========================================================
+ERROR
+========================================================= */
+
+.error-message {
+text-align: center;
+
+
+color: #fca5a5;
+
+padding: 30px;
+
+}
+
+.error-message strong {
+color: #fecaca;
+}
+
+/* =========================================================
+FOOTER
+========================================================= */
+
+footer {
+text-align: center;
+
+color: #64748b;
+
+padding: 25px;
+
+font-size: 12px;
+
+
+}
+
+/* =========================================================
+RESPONSIVE
+========================================================= */
+
+@media (max-width: 1100px) {
+
+
+.stats {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+
+}
+
+@media (max-width: 800px) {
+
+
+.sidebar {
+    position: relative;
+
+    width: 100%;
+
+    height: auto;
+
+    min-height: auto;
+}
+
+
+.main {
+    margin-left: 0;
+
+    padding: 15px;
+}
+
+
+.stats {
+    grid-template-columns: 1fr;
+}
+
+
+.topbar {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 15px;
+}
+
+
+nav {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+}
+
+
+.logout-btn {
+    margin-top: 20px;
+}
+
+
+.panel-header {
+    flex-direction: column;
+
+    align-items: flex-start;
+}
+
+
+.header-actions {
+    width: 100%;
+}
+
+
+.header-actions a {
+    text-align: center;
+
+    flex: 1;
+}
+
+
+}
+
+@media (max-width: 500px) {
+
+
+nav {
+    grid-template-columns: 1fr;
+}
+
+
+.topbar h1 {
+    font-size: 23px;
+}
+
+
+.owner-badge {
+    width: 100%;
+
+    text-align: center;
+}
+
+
+}
